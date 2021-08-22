@@ -1,4 +1,4 @@
-.homeContainer {
+.message-container {
   width: 80vw;
   background: #b42b51;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -10,14 +10,8 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem;
-  justify-content: space-between;
-}
-.btn-logout {
-  align-self: flex-end;
-}
-.message-form input {
-  margin: 0.4rem;
 }

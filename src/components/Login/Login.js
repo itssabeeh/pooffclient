@@ -44,25 +44,28 @@ const Login = () => {
 
   return (
     <>
-      {isError && <ErrorAlert>{error}</ErrorAlert>}
       <div className="loginContainer">
-        <form className="loginForm" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          <button type="submit">Login</button>
-        </form>
+        {isError && <ErrorAlert>{error}</ErrorAlert>}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <form className="loginForm" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            <button type="submit">Login</button>
+          </form>
+        )}
       </div>
-      {isLoading && <h4>Loading...</h4>}
     </>
   );
 };

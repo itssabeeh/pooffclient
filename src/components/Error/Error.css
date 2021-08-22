@@ -1,6 +1,6 @@
-.homeContainer {
+.error-container {
   width: 80vw;
-  background: #b42b51;
+  background: #000000;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -10,14 +10,14 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem;
-  justify-content: space-between;
 }
-.btn-logout {
-  align-self: flex-end;
+.error-message {
+  color: red;
 }
-.message-form input {
-  margin: 0.4rem;
+.error-message {
+  size: 2rem;
 }

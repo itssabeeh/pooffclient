@@ -17,8 +17,20 @@ const Landing = () => {
     <div className="LandingContainer">
       <div className="formContainer">{isLogin ? <Login /> : <Register />}</div>
       <div className="sideSection">
-        <p>Hey? you want to get started with pooff?</p>
-        <button onClick={() => setIsLogin(false)}>click to register</button>
+        <h3>Poooff..</h3>
+        <h4>where your messages dissapear</h4>
+        <h3></h3>
+        {isLogin ? (
+          <div>
+            <p>Hey? you want to get started with pooff?</p>
+            <button onClick={() => setIsLogin(false)}>SignUp</button>
+          </div>
+        ) : (
+          <div>
+            <p>Are you an existing user?</p>
+            <button onClick={() => setIsLogin(true)}>Login</button>
+          </div>
+        )}
       </div>
     </div>
   );

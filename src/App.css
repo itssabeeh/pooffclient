@@ -11,3 +11,18 @@
   align-items: center;
   flex-direction: column;
 }
+
+button {
+  border: 1px solid #e63e6ebe;
+  background-color: #e63e6d;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5rem;
+}
+input {
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+}

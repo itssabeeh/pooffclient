@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import '../Timer/Timer.css';
 const Timer = ({ expireAt }) => {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -34,12 +34,12 @@ const Timer = ({ expireAt }) => {
   });
 
   return (
-    <div>
-      <p>going to disaapear in</p>
-      <span>day:{days}</span>
-      <span>Hours:{hours}</span>
-      <span>Minute:{minutes}</span>
-      <span>seconds:{seconds}</span>
+    <div className="timer-container">
+      <p>Your message is going to disaapear in</p>
+      <span>{days} day's </span>
+      <span>{hours} Hour </span>
+      <span>{minutes} minutes and </span>
+      <span>{seconds} seconds</span>
     </div>
   );
 };

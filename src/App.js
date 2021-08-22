@@ -1,5 +1,5 @@
 import './App.css';
-import Error from './components/Error';
+import Error from './components/Error/Error';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import 'bootstrap/dist/css/bootstrap.css';

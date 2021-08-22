@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Timer from '../Timer/Timer';
+import '../Message/Message.css';
 const Message = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -53,7 +54,7 @@ const Message = () => {
   }
 
   return (
-    <div>
+    <div className="message-container">
       {messageData && (
         <>
           <h4>{messageData.dismessage}</h4>

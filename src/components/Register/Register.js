@@ -29,8 +29,8 @@ const Register = () => {
         password,
       });
       localStorage.setItem('userInfo', JSON.stringify(response.data));
-      setIsRedirect(true);
       setIsLoading(false);
+      setIsRedirect(true);
     } catch (error) {
       setIsError(true);
       setError(error.response.data.message);
@@ -44,25 +44,28 @@ const Register = () => {
 
   return (
     <>
-      {isError && <ErrorAlert>{error}</ErrorAlert>}
       <div className="registerContainer">
-        <form className="registerForm" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          <button type="submit">Register</button>
-        </form>
+        {isError && <ErrorAlert>{error}</ErrorAlert>}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <form className="registerForm" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            <button type="submit">Register</button>
+          </form>
+        )}
       </div>
-      {isLoading && <h4>Loading...</h4>}
     </>
   );
 };
