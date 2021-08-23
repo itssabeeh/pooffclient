@@ -24,10 +24,13 @@ const Register = () => {
     try {
       setIsLoading(true);
       setIsError(false);
-      const response = await axios.post('http://localhost:8000/register', {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        'https://pooff.herokuapp.com/register',
+        {
+          username,
+          password,
+        }
+      );
       localStorage.setItem('userInfo', JSON.stringify(response.data));
       setIsLoading(false);
       setIsRedirect(true);
@@ -54,12 +57,14 @@ const Register = () => {
               type="text"
               placeholder="username"
               value={username}
+              required
               onChange={(e) => setUsername(e.target.value)}
             ></input>
             <input
               type="password"
               placeholder="Password"
               value={password}
+              required
               onChange={(e) => setPassword(e.target.value)}
             ></input>
             <button type="submit">Register</button>

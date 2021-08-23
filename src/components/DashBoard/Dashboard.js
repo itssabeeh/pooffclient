@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [expMessages, setExpMessages] = useState([]);
   const [newMessages, setnewMessages] = useState([]);
   const [userInfo, setUserInfo] = useState({});
-  const url = 'http://localhost:8000/dmessages/getAll/';
+  const url = 'https://pooff.herokuapp.com/dmessages/getAll/';
   const fetchMessages = async () => {
     try {
       setIsLoading(true);

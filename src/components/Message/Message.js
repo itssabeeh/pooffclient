@@ -15,7 +15,7 @@ const Message = () => {
       setIsLoading(true);
       setIsError(false);
       const response = await axios.post(
-        'http://localhost:8000/dmessages/content',
+        'https://pooff.herokuapp.com/dmessages/content',
         {
           dId,
         }

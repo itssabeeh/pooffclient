@@ -31,11 +31,14 @@ const Home = () => {
       setIsLoading(true);
       setMessageData(null);
       setIsError(false);
-      const response = await axios.post('http://localhost:8000/dmessages', {
-        userId: userInfo.id,
-        dismessage: message,
-        expireAt,
-      });
+      const response = await axios.post(
+        'https://pooff.herokuapp.com/dmessages',
+        {
+          userId: userInfo.id,
+          dismessage: message,
+          expireAt,
+        }
+      );
       setMessageData(response.data);
       setIsLoading(false);
       setMessage('');
