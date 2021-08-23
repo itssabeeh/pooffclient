@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 import '../HomePage/Home.css';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
+import Dashboard from '../DashBoard/Dashboard';
+import { BiMessage } from 'react-icons/bi';
 
 const Home = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [isRedirect, setIsRedirect] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState('');
+  const [showLogin, setShowLogin] = useState(true);
   const [message, setMessage] = useState('');
-  const [time, setTime] = useState(null);
+  const [time, setTime] = useState('');
   const [expireAt, setExpireAt] = useState(null);
   const [messageData, setMessageData] = useState(null);
   const handleSubmit = (e) => {
@@ -36,9 +38,10 @@ const Home = () => {
       });
       setMessageData(response.data);
       setIsLoading(false);
+      setMessage('');
+      setTime('');
     } catch (error) {
       setIsError(true);
-      console.log(error);
       setIsLoading(false);
     }
   };
@@ -58,39 +61,54 @@ const Home = () => {
     <>
       {userInfo && (
         <div className="homeContainer">
-          <h1>Hey!..{userInfo && userInfo.username}</h1>
-          <div>
-            <form className="message-form" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Enter your message"
-                value={message}
-                required
-                onChange={(e) => setMessage(e.target.value)}
-              ></input>
-              <input
-                placeholder="Enter expiry time in minutes"
-                type="number"
-                value={time}
-                required
-                onChange={(e) => setTime(e.target.value)}
-              ></input>
-              {isLoading ? (
-                <Loading />
-              ) : (
-                <button type="submit">Generate</button>
-              )}
-              {messageData && (
-                <div className="disappear-link">
-                  <Link
-                    style={{ textDecoration: 'none', color: 'white' }}
-                    to={`/message/${messageData.dId}`}
-                  >
-                    go to the disappearing message
-                  </Link>
-                </div>
-              )}
-            </form>
+          <div className="home-head">
+            <h1>Hey!..{userInfo && userInfo.username}</h1>
+            <button
+              className="dash-btn"
+              type="button"
+              onClick={() => setShowLogin(!showLogin)}
+            >
+              <BiMessage size={30} />
+            </button>
+          </div>
+          <div className="home-body">
+            {showLogin ? (
+              <form className="message-form" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Enter your message"
+                  value={message}
+                  required
+                  onChange={(e) => setMessage(e.target.value)}
+                ></input>
+                <input
+                  placeholder="Enter expiry time in minutes"
+                  type="number"
+                  value={time}
+                  required
+                  onChange={(e) => setTime(e.target.value)}
+                ></input>
+                {isLoading ? (
+                  <Loading />
+                ) : (
+                  <button type="submit">Generate</button>
+                )}
+                {messageData && (
+                  <div className="disappear-link">
+                    <Link
+                      style={{ textDecoration: 'none', color: 'white' }}
+                      to={`/message/${messageData.dId}`}
+                    >
+                      go to the disappearing message
+                    </Link>
+                  </div>
+                )}
+              </form>
+            ) : (
+              <div className="dashboard-container">
+                <Dashboard />
+              </div>
+            )}
           </div>
           <button className="btn-logout" onClick={handleLogout}>
             Logout

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Loading from '../Loading/Loading';
@@ -29,8 +29,8 @@ const Login = () => {
         password,
       });
       localStorage.setItem('userInfo', JSON.stringify(response.data));
-      setIsRedirect(true);
       setIsLoading(false);
+      setIsRedirect(true);
     } catch (error) {
       setIsError(true);
       setError(error.response.data.message);

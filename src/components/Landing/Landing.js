@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import '../Landing/Landing.css';
 
 const Landing = () => {
@@ -17,12 +17,12 @@ const Landing = () => {
     <div className="LandingContainer">
       <div className="formContainer">{isLogin ? <Login /> : <Register />}</div>
       <div className="sideSection">
-        <h3>Poooff..</h3>
-        <h4>where your messages dissapear</h4>
-        <h3></h3>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
+          <h3>Poooff..</h3>
+        </Link>
         {isLogin ? (
           <div>
-            <p>Hey? you want to get started with pooff?</p>
+            <p>Hey!! you want to get started with pooff?</p>
             <button onClick={() => setIsLogin(false)}>SignUp</button>
           </div>
         ) : (

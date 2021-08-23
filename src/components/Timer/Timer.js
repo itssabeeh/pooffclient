@@ -18,20 +18,19 @@ const Timer = ({ expireAt }) => {
       );
       const minute = Math.floor((diff % (60 * 60 * 1000)) / (1000 * 60));
       const second = Math.floor((diff % (60 * 1000)) / 1000);
-      if (diff < 0) {
-        clearInterval(interval.current);
-      } else {
-        setDays(day);
-        setHours(hour);
-        setMinutes(minute);
-        setSeconds(second);
-      }
+      setDays(day);
+      setHours(hour);
+      setMinutes(minute);
+      setSeconds(second);
     }, 1000);
   };
 
   useEffect(() => {
     expireAt && timer();
-  });
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <div className="timer-container">

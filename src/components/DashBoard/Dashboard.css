@@ -1,0 +1,27 @@
+.dashboard {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dashboard hr {
+  margin: 0;
+}
+
+.dash-section {
+  padding: 1rem;
+}
+.dashmsg-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 10rem;
+}
+.dashmsg-container::-webkit-scrollbar {
+  display: none;
+}
+
+.dashmsg-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
