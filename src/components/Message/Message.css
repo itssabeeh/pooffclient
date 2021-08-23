@@ -1,4 +1,4 @@
-.message-container {
+/* .message-container {
   width: 80vw;
   background: #b42b51;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -14,4 +14,24 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 1rem;
+} */
+.message-header {
+  width: 80vw;
+  background: #b42b51;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.logo-holder {
+  align-self: flex-start;
+  text-decoration: none;
+  color: white;
 }

@@ -102,7 +102,7 @@ const Home = () => {
                       style={{ textDecoration: 'none', color: 'white' }}
                       to={`/message/${messageData.dId}`}
                     >
-                      go to the disappearing message
+                      Message Created!!.. click to view
                     </Link>
                   </div>
                 )}

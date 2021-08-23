@@ -4,6 +4,7 @@ import axios from 'axios';
 import Timer from '../Timer/Timer';
 import '../Message/Message.css';
 import Loading from '../Loading/Loading';
+import { Link } from 'react-router-dom';
 const Message = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -50,7 +51,14 @@ const Message = () => {
     return <Redirect to="/Error" />;
   }
   return (
-    <div className="message-container">
+    <div className="message-header">
+      <Link
+        className="logo-holder"
+        style={{ textDecoration: 'none', color: 'white' }}
+        to="/"
+      >
+        <h3>Pooff</h3>
+      </Link>
       {isLoading ? (
         <Loading />
       ) : (

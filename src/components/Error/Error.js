@@ -7,7 +7,7 @@ const Error = () => {
     <div className="error-container">
       <div className="error-message">
         <BiError size={100} />
-        oops...nothing to see here.
+        <h5>oops...nothing to see here.</h5>
       </div>
       <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
         want to create a dissapearing message?
