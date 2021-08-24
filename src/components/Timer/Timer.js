@@ -35,10 +35,10 @@ const Timer = ({ expireAt }) => {
   return (
     <div className="timer-container">
       <p>Your message is going to disaapear in</p>
-      <span>{days} day's </span>
+      <span>{days} Days </span>
       <span>{hours} Hour </span>
-      <span>{minutes} minutes and </span>
-      <span>{seconds} seconds</span>
+      <span>{minutes} Minutes and </span>
+      <span>{seconds} Seconds</span>
     </div>
   );
 };

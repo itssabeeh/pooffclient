@@ -10,7 +10,6 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
-
   flex-wrap: wrap;
   padding: 1rem;
   justify-content: space-between;
@@ -31,5 +30,10 @@
 .home-head {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 0;
+}
+.greeting {
+  display: flex;
   flex-wrap: wrap;
 }

@@ -65,7 +65,10 @@ const Home = () => {
       {userInfo && (
         <div className="homeContainer">
           <div className="home-head">
-            <h1>Hey!..{userInfo && userInfo.username}</h1>
+            <section className="greeting">
+              <h1>Hey!..</h1>
+              <h1>{userInfo && userInfo.username}</h1>
+            </section>
             <button
               className="dash-btn"
               type="button"
